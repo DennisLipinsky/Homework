@@ -1,8 +1,5 @@
 package edu.dlipinsky.homework2;
 
-/**
- * Created by Δενθρ on 20.10.2015.
- */
 public class MatrixPrinter {
 
     public static void main(String[] args) {
@@ -18,10 +15,10 @@ public class MatrixPrinter {
             int inIndex = 0;
             while ( inIndex < array[index].length ) {
                 System.out.print( array [index][inIndex] + " " );
-                inIndex = ++ inIndex;
+                ++inIndex;
             }
             System.out.println();
-            index = ++ index;
+            ++index;
         }
 
     }

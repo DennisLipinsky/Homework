@@ -1,8 +1,5 @@
 package edu.dlipinsky.homework2;
 
-/**
- * Created by Δενθρ on 20.10.2015.
- */
 public class WaterSquare {
     public static void main(String[] args) {
         int[] array = { 7, 5, 6, 3, 8 };
@@ -66,8 +63,8 @@ public class WaterSquare {
             int nextInd = shoreInd;
             int maxEl = array [shoreInd];
             int maxElInd = shoreInd;
-            while ( !waterIn || nextInd < array.length) {
-                nextInd = ++ nextInd;
+            while ( !waterIn || nextInd < array.length - 1) {
+                ++nextInd;
                 if ( array [shoreInd] >= array [nextInd] ) {
                     waterSquare = waterSquare + (array[shoreInd] - array[nextInd]);
                 } else {
@@ -83,9 +80,8 @@ public class WaterSquare {
                 if (noWater) {
                     waterSquare = 0;
                 }
-
-                System.out.println("WaterSquare is " + waterSquare);
             }
+            System.out.println("WaterSquare is " + waterSquare);
         }
     }
 }

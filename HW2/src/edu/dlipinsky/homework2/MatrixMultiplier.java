@@ -1,8 +1,5 @@
 package edu.dlipinsky.homework2;
 
-/**
- * Created by Δενθρ on 20.10.2015.
- */
 public class MatrixMultiplier {
 
     public static void main(String[] args) {
@@ -22,23 +19,19 @@ public class MatrixMultiplier {
         // Init result matrix
         int [][] result = new int[3][3];
 
-
-
         /*
          * Your code is here
          */
+
         if ( first[0].length == second.length ) {
-            for ( int indResult = 0; indResult < result.length; indResult ++ ) {
-                for ( int index = 0; index < first[0].length; index ++ ) {
+
+            for ( int indResult = 0; indResult < result.length; indResult++ ) {
+                for ( int index = 0; index < first.length; index++ ) {
                     int temp = 0;
-                    for ( int innerIndex = 0; innerIndex < second.length; innerIndex ++ ) {
+                    for ( int innerIndex = 0; innerIndex < second.length; innerIndex++ ) {
                         temp = temp + first[indResult][innerIndex] * second[innerIndex][index];
-                        System.out.print(temp + " ");
                     }
                     result[indResult][index] = temp;
-                    System.out.println();
-                    System.out.println(result[indResult][index]);
-
                 }
             }
 
@@ -51,10 +44,10 @@ public class MatrixMultiplier {
             int inIndex = 0;
             while ( inIndex < result[index].length ) {
                 System.out.print( result [index][inIndex] + " " );
-                inIndex = ++ inIndex;
+                ++inIndex;
             }
             System.out.println();
-            index = ++ index;
+            ++index;
         }
     }
 }
