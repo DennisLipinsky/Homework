@@ -4,60 +4,47 @@ public class YourOwnBinarySearch {
 
     public static void main(String[] args) {
         int[] array = {1, 4, 7, 10, 17, 30, 48};
-        int element = 11;
+        int element = 10;
 
-    /* Your code here */
+        /* Your code here */
 
-        // Bubble sort & printing the massive
+        // Check if array isn't empty
+        if (array.length != 0) {
 
-        for ( int index = 0; index < array.length; index++ ) {
-            for ( int inIndex = index + 1; inIndex < array.length; inIndex++ ) {
-                if (array[index] > array[inIndex]) {
-                    int maxEl = array[index];
-                    array[index] = array [inIndex];
-                    array[inIndex] = maxEl;
-                }
-            }
-            System.out.print( array[index] + " " );
-        }
-        System.out.println();
+            // Bubble sort & printing the massive
 
-        // New binary search
-
-
-
-
-
-        /*int elementInd = -1;
-        //Searching the element's index
-
-        if ( element <= array [array.length / 2] ) {
-            if ( element == array [array.length / 2] ) {
-                elementInd = array.length / 2;
-            } else {
-                int index = array.length / 2;
-                while ( index >= 0) {
-                    if ( element == array [index] ) {
-                        elementInd = index;
+            for ( int index = 0; index < array.length; index++ ) {
+                for ( int inIndex = index + 1; inIndex < array.length; inIndex++ ) {
+                    if (array[index] > array[inIndex]) {
+                        int maxEl = array[index];
+                        array[index] = array [inIndex];
+                        array[inIndex] = maxEl;
                     }
-                    --index;
                 }
+                System.out.print( array[index] + " " );
             }
-        } else {
-            int index = array.length / 2 + 1;
-            while ( index < array.length ) {
-                if ( element == array [index] ) {
-                    elementInd = index;
-                }
-                index = ++ index;
-            }
-        }
-        if ( elementInd > -1 ) {
-            System.out.println( "The element's index is " + elementInd );
-        } else {
-            System.out.println( "The element was not found." );
-            System.out.println( "The element's index is " + elementInd );
-        }*/
+            System.out.println();
 
+            // binary search
+
+            int minElement = 0;
+            int maxElement = array.length - 1;
+            int elementInd = array.length / 2;
+            while((minElement <= maxElement) && (array[elementInd] != element)) {
+                if (array[elementInd] < element) {
+                    minElement = elementInd + 1;
+                } else {
+                    maxElement = elementInd - 1;
+                }
+                elementInd = (minElement + maxElement) / 2;
+            }
+            if (minElement <= maxElement) {
+                System.out.println("The element's index is " + elementInd);
+            } else {
+                System.out.println("Error! The element " + element + " was not found.");
+            }
+        } else {
+            System.out.println("Error! The array is empty.");
+        }
     }
 }

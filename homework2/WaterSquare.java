@@ -13,20 +13,20 @@ public class WaterSquare {
 
         // Searching the first & the opposite shores and their indexes
 
-        for ( int i = 0; i < array.length; i++ ) {
-            if ( array [i] > firstShore ) {
-                firstShore = array [i];
-                firstShoreInd = i;
+        for ( int index = 0; index < array.length; index++ ) {
+            if ( array[index] > firstShore ) {
+                firstShore = array [index];
+                firstShoreInd = index;
             }
         }
-        for ( int j = 0; j < array.length; j++ ) {
-            if ( array [j] > opposShore && array [j] < firstShore ) {
-                opposShore = array [j];
-                opposShoreInd = j;
+        for ( int index = 0; index < array.length; index++ ) {
+            if ( array[index] > opposShore && array[index] < firstShore ) {
+                opposShore = array[index];
+                opposShoreInd = index;
             }
-            if ( firstShore == opposShore && firstShoreInd == opposShoreInd && j <= array.length - 1) {
-                opposShore = array [j+1];
-                opposShoreInd = j+1;
+            if ( firstShore == opposShore && firstShoreInd == opposShoreInd && index <= array.length - 1) {
+                opposShore = array[index + 1];
+                opposShoreInd = index + 1;
             }
         }
 
@@ -63,15 +63,15 @@ public class WaterSquare {
             int nextInd = shoreInd;
             int maxEl = array [shoreInd];
             int maxElInd = shoreInd;
-            while ( !waterIn || nextInd < array.length - 1) {
+            while ( !waterIn || (nextInd < array.length - 1)) {
                 ++nextInd;
-                if ( array [shoreInd] >= array [nextInd] ) {
+                if ( array[shoreInd] >= array [nextInd] ) {
                     waterSquare = waterSquare + (array[shoreInd] - array[nextInd]);
                 } else {
                     waterIn = true;
                 }
-                if (maxEl <= array [nextInd]) {
-                    maxEl = array [nextInd];
+                if (maxEl <= array[nextInd]) {
+                    maxEl = array[nextInd];
                     maxElInd = nextInd;
                     if (maxEl == array[shoreInd] && maxElInd == shoreInd ) {
                         waterSquare = 0;
