@@ -24,7 +24,6 @@ public class SetExample {
         users.add(new User("Mike"));
         users.add(new User("123John"));
 
-        Comparable t;
         for (User user : users) {
             System.out.println(user);
         }
